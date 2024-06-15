@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgt1"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/search"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/baseline_cloud_24" />
+
+        <TextView
+            android:id="@+id/weather"
+            android:layout_width="341dp"
+            android:layout_height="119dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="56dp"
+            android:background="@drawable/lavender_border"
+            android:gravity="center"
+            android:textColor="@color/yellow"
+            android:textFontWeight="500"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/cityName"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/weathertext"
+            android:hint="Enter City"
+            android:textAlignment="center"
+            android:textColor="@color/lavender"
+            android:textColorHint="@color/lavender"
+            android:textSize="36dp" />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/yellow"
+            android:text="Search"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top1" />
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#ffff"/> <!-- Darker color when pressed -->
+            <corners android:radius="25dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <gradient
+                android:angle="45"
+                android:startColor="#ffff"
+                android:endColor="#ffff"/>
+            <corners android:radius="25dp"/>
+        </shape>
+    </item>
+</selector>

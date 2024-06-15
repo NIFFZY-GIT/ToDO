@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewTask">
+
+    <EditText
+        android:id="@+id/task_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="364dp"
+        android:backgroundTint="@color/green_blue"
+        android:drawableRight="@drawable/baseline_task_alt_24"
+        android:hint="Write Your Task Here ...."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/set_due_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:drawableRight="@drawable/baseline_calendar_month_24"
+        android:drawablePadding="8dp"
+        android:text="Set Due Date"
+        android:textColor="@color/green_blue"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task_edittext" />
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="122dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="8dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task_edittext" />
+
+    <!--    <Button-->
+    <!--        android:id="@+id/sppech_mic_btn"-->
+    <!--        android:layout_width="122dp"-->
+    <!--        android:layout_height="39dp"-->
+    <!--        android:text="Mic"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/save_btn"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/task_edittext" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
