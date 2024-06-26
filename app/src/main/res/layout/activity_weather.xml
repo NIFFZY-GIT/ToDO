@@ -24,10 +24,17 @@
         </LinearLayout>
 
         <ImageView
+            android:paddingTop="20dp"
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             app:srcCompat="@drawable/baseline_cloud_24" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/cweat" />
 
         <TextView
             android:id="@+id/weather"

@@ -82,7 +82,7 @@ public class WeatherActivity extends AppCompatActivity {
                             })
                             .show();
 
-                    Toast.makeText(WeatherActivity.this, "The weather is good! You can carry out your task today.", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(WeatherActivity.this, "The weather is good! You can carry out your task today.", Toast.LENGTH_LONG).show();
                 } else {
                     builder.setTitle("Weather Update")
                             .setMessage("The weather is bad. Try tomorrow.")
@@ -92,7 +92,7 @@ public class WeatherActivity extends AppCompatActivity {
                                 }
                             })
                             .show();
-                    Toast.makeText(WeatherActivity.this, "The weather is bad. Try tomorrow.", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(WeatherActivity.this, "The weather is bad. Try tomorrow.", Toast.LENGTH_LONG).show();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -112,16 +112,26 @@ public class WeatherActivity extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(WeatherActivity.this, "Button Clicked! ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(WeatherActivity.this, "Loading....", Toast.LENGTH_SHORT).show();
                 String city = cityName.getText().toString();
                 if (city != null && !city.isEmpty()) {
                     String url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
                     GetWeather task = new GetWeather();
                     task.execute(url);
                 } else {
-                    Toast.makeText(WeatherActivity.this, "Enter City", Toast.LENGTH_SHORT).show();
+                    // Show an alert dialog if the city is empty
+                    new AlertDialog.Builder(WeatherActivity.this)
+                            .setTitle("Alert")
+                            .setMessage("Please enter a city name :).")
+                            .setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Your action when OKAY button is clicked
+                                }
+                            })
+                            .show();
                 }
             }
         });
     }
 }
+//https://www.youtube.com/watch?v=f2oSRBwN2HY&ab_channel=SandipBhattacharya

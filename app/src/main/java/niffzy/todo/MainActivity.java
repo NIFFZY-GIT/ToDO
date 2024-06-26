@@ -41,11 +41,21 @@ public class MainActivity extends AppCompatActivity implements OnDialogCloseList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        FloatingActionButton logoutButton = findViewById(R.id.floatingActionButton3);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logout();
+            }
+        });
+
+
         // Initialize views
         recyclerView = findViewById(R.id.recycerlview);
         mFab = findViewById(R.id.floatingActionButton);
         weatherFab = findViewById(R.id.floatingActionButton2);
-        profileFab = findViewById(R.id.floatingActionButton3);
+//        profileFab = findViewById(R.id.floatingActionButton3);
         firestore = FirebaseFirestore.getInstance();
 
         recyclerView.setHasFixedSize(true);
@@ -69,14 +79,18 @@ public class MainActivity extends AppCompatActivity implements OnDialogCloseList
         });
 
         // Set click listener for the profile FAB to fetch user data from Firestore and navigate to ProfileActivity
-        profileFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                startActivity(intent);
-            }
+//        profileFab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+//                startActivity(intent);
+//            }
+//
+//        });
 
-        });
+
+
+
 
         mList = new ArrayList<>();
         adapter = new ToDoAdapter(MainActivity.this, mList);
@@ -89,7 +103,20 @@ public class MainActivity extends AppCompatActivity implements OnDialogCloseList
         recyclerView.setAdapter(adapter);
     }
 
+    private void logout() {
+        // Clear user session data here
+        // For example, if using SharedPreferences to store login state:
+        getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                .edit()
+                .clear()
+                .apply();
 
+        // Navigate to the login activity
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
 
 
     private void showData() {
@@ -123,3 +150,4 @@ public class MainActivity extends AppCompatActivity implements OnDialogCloseList
         adapter.notifyDataSetChanged();
     }
 }
+//https://www.youtube.com/watch?v=MoIVCfNwJf8&ab_channel=CodingSTUFF

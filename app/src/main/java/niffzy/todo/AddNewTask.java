@@ -111,7 +111,7 @@ public class AddNewTask  extends BottomSheetDialogFragment {
 
             if (task.length() > 0){
                 mSaveBtn.setEnabled(false);
-                mSaveBtn.setBackgroundColor(Color.GRAY);
+                mSaveBtn.setBackgroundColor(Color.BLUE);
             }
         }
 
@@ -125,10 +125,10 @@ public class AddNewTask  extends BottomSheetDialogFragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().equals("")){
                     mSaveBtn.setEnabled(false);
-                    mSaveBtn.setBackgroundColor(Color.GRAY);
+                    mSaveBtn.setBackgroundColor(Color.RED);
                 }else{
                     mSaveBtn.setEnabled(true);
-                    mSaveBtn.setBackgroundColor(getResources().getColor(R.color.green_blue));
+                    mSaveBtn.setBackgroundColor(getResources().getColor(R.color.blue));
                 }
             }
 
